@@ -84,10 +84,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports]
 # Create clock
 #===========================================
 #create_clock  -period 50.00 -name MAIN_CLK [get_ports PIN_EHS]
-create_clock -period 10.000 -name PIN_EHS [get_ports PIN_EHS]
+create_clock -period 20.000 -name PIN_EHS [get_ports PIN_EHS]
 create_clock -period 500.000 -name PAD_JTAG_TCLK [get_ports PAD_JTAG_TCLK]
 
-# create_clock -period 50.00 -name MAIN_CLK [get_ports PIN_EHS] å’Œ set_false_path -from [get_ports PIN_EHS] -to [get_pins x_cpu_top/CPU/x_cr_tcipif_top/x_cr_coretim_top/refclk_ff1_reg/D]
+# create_clock -period 50.00 -name MAIN_CLK [get_ports PIN_EHS] å’? set_false_path -from [get_ports PIN_EHS] -to [get_pins x_cpu_top/CPU/x_cr_tcipif_top/x_cr_coretim_top/refclk_ff1_reg/D]
 set_false_path -from [get_pins u_clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0] -to [get_pins x_cpu_top/CPU/x_cr_tcipif_top/x_cr_coretim_top/refclk_ff1_reg/D]
 
 #===========================================
